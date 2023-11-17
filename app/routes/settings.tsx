@@ -1,4 +1,4 @@
-import { Link } from "remix";
+import { Link, Outlet } from "@remix-run/react";
 
 export default function Settings() {
   return (
@@ -9,6 +9,8 @@ export default function Settings() {
         <Link to="app">App</Link>
         <Link to="profile">Profile</Link>
       </nav>
+
+      <Outlet />
 
     </div>
   );

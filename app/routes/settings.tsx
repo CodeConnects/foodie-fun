@@ -5,9 +5,9 @@ export default function Settings() {
     <div>
       <h1>Settings</h1>
 
-      <nav>
-        <Link to="app">App</Link>
-        <Link to="profile">Profile</Link>
+      <nav className="my-5">
+        <Link className="bg-secondary hover:bg-primary p-2" to="app">App</Link>
+        <Link className="bg-secondary hover:bg-primary p-2 m-2" to="profile">Profile</Link>
       </nav>
 
       <Outlet />

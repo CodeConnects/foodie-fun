@@ -63,8 +63,8 @@ function AppNavLink({ to, children }: AppNavLinkProps) {
         {({ isActive }) => (
           <div 
             className={classNames(
-              "py-4 flex justify-center hover:bg-tertiary bg-opacity-30 hover:bg-opacity-60 transition-colors duration-200",
-              { "bg-tertiary" : isActive}
+              "py-4 flex justify-center hover:bg-secondary bg-opacity-50 hover:bg-opacity-80 transition-colors duration-200",
+              { "bg-secondary" : isActive}
             )}
           >{children}</div>
         )}

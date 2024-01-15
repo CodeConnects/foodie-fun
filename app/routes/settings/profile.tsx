@@ -2,7 +2,7 @@ export default function Profile() {
   return (
     <div>
       <h1>Profile Settings</h1>
-      <ul>
+      <ul className="m-3">
         <li>Name</li>
         <li>Email</li>
         <li>Password</li>

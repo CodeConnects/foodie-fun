@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 
 // add main tailwind css file
 import styles from "./tailwind.css";
+import { HomeIcon, DiscoverIcon, RecipeBookIcon, SettingsIcon } from "./components/Icons";
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 // meta description for all pages
@@ -34,10 +35,10 @@ export default function App() {
       <body className="flex h-screen">
         <nav className="bg-primary text-white">
           <ul className="flex flex-col">
-            <li><Link to="/">Foodie Fun</Link></li>
-            <li><Link to="discover">Discover</Link></li>
-            <li><Link to="app">App</Link></li>
-            <li><Link to="settings">Settings</Link></li>
+            <li><Link to="/"><HomeIcon /></Link></li>
+            <li><Link to="discover"><DiscoverIcon /></Link></li>
+            <li><Link to="app"><RecipeBookIcon /></Link></li>
+            <li><Link to="settings"><SettingsIcon /></Link></li>
           </ul>
         </nav>
         <Outlet />

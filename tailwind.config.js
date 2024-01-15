@@ -4,10 +4,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        'primary': '#0B0C10',
-        'secondary': '#1F2833',
-        'tertiary': '#C5C6C7',
-        'quaternary': '#66FCF1',
+        'primary': '#2d545e',/*Night Blue: #2d545e*/
+        'secondary': '#c89666',/*Sand Tan Shadow: #c89666*/
+        'tertiary': '#C5C6C7',/*Sand Tan: #e1b382*/
+        'quaternary': '#12343b',/*Night Blue Shadow: #12343b*/
       },
     },
   },

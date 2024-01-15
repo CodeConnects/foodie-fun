@@ -33,12 +33,12 @@ export default function App() {
         <Links />
       </head>
       <body className="flex h-screen">
-        <nav className="bg-primary text-white">
+        <nav className="bg-secondary text-white">
           <ul className="flex flex-col">
-            <li><Link to="/"><HomeIcon /></Link></li>
-            <li><Link to="discover"><DiscoverIcon /></Link></li>
-            <li><Link to="app"><RecipeBookIcon /></Link></li>
-            <li><Link to="settings"><SettingsIcon /></Link></li>
+            <AppNavLink to="/"><HomeIcon /></AppNavLink>
+            <AppNavLink to="discover"><DiscoverIcon /></AppNavLink>
+            <AppNavLink to="app"><RecipeBookIcon /></AppNavLink>
+            <AppNavLink to="settings"><SettingsIcon /></AppNavLink>
           </ul>
         </nav>
         <Outlet />
@@ -47,5 +47,18 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+type AppNavLinkProps = {
+  to: string;
+  children: React.ReactNode;
+}
+
+function AppNavLink({ to, children }: AppNavLinkProps) {
+  return (
+    <li className="w-16">
+      <Link to={to}><div className="py-4 flex justify-center hover:bg-quaternary">{children}</div></Link>
+    </li>
   );
 }

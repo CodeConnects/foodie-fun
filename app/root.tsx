@@ -1,19 +1,18 @@
-import { cssBundleHref } from "@remix-run/css-bundle";
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
   Meta,
+  NavLink,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-import { Link } from "react-router-dom";
 
 // add main tailwind css file
 import styles from "./tailwind.css";
 import { HomeIcon, DiscoverIcon, RecipeBookIcon, SettingsIcon } from "./components/Icons";
-export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
+import classNames from "classnames";
 
 // meta description for all pages
 export const meta: MetaFunction = () => {
@@ -22,6 +21,8 @@ export const meta: MetaFunction = () => {
     { name: "description", content: "A collection of delicious recipes built using Remix.js" }
   ];
 }
+
+export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export default function App() {
   return (
@@ -32,16 +33,16 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex h-screen">
-        <nav className="bg-secondary text-white">
-          <ul className="flex flex-col">
+      <body className="md:flex md:h-screen">
+        <nav className="bg-primary text-white">
+          <ul className="flex md:flex-col">
             <AppNavLink to="/"><HomeIcon /></AppNavLink>
             <AppNavLink to="discover"><DiscoverIcon /></AppNavLink>
             <AppNavLink to="app"><RecipeBookIcon /></AppNavLink>
             <AppNavLink to="settings"><SettingsIcon /></AppNavLink>
           </ul>
         </nav>
-        <Outlet />
+        <div className="p-4"><Outlet /></div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
@@ -58,7 +59,16 @@ type AppNavLinkProps = {
 function AppNavLink({ to, children }: AppNavLinkProps) {
   return (
     <li className="w-16">
-      <Link to={to}><div className="py-4 flex justify-center hover:bg-quaternary">{children}</div></Link>
+      <NavLink to={to}>
+        {({ isActive }) => (
+          <div 
+            className={classNames(
+              "py-4 flex justify-center hover:bg-tertiary bg-opacity-30 hover:bg-opacity-60 transition-colors duration-200",
+              { "bg-tertiary" : isActive}
+            )}
+          >{children}</div>
+        )}
+      </NavLink>
     </li>
   );
 }

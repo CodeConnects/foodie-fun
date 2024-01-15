@@ -31,32 +31,15 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-
-        <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-          <Link to="/" className="flex items-center flex-shrink-0 text-white mr-6">Foodie Fun</Link>
-          <div className="block lg:hidden">
-            <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-              <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                <title>Menu</title>
-                <path d="M0 0h20v20H0z" fill="none"/>
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-            <div className="text-sm lg:flex-grow">
-              <Link to="discover" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Discover</Link>
-              <Link to="app" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">App</Link>
-              <Link to="settings" className="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">Settings</Link>
-            </div>
-          </div>
+      <body className="flex h-screen">
+        <nav className="bg-primary text-white">
+          <ul className="flex flex-col">
+            <li><Link to="/">Foodie Fun</Link></li>
+            <li><Link to="discover">Discover</Link></li>
+            <li><Link to="app">App</Link></li>
+            <li><Link to="settings">Settings</Link></li>
+          </ul>
         </nav>
-
         <Outlet />
         <ScrollRestoration />
         <Scripts />

@@ -1,11 +1,11 @@
 export default function Profile() {
   return (
     <div>
-      <h1>Profile Settings</h1>
+      <h2>Profile Settings</h2>
       <ul className="m-3">
-        <li>Name</li>
-        <li>Email</li>
-        <li>Password</li>
+        <li className="text-yellow-200">Name</li>
+        <li className="text-yellow-200">Email</li>
+        <li className="text-yellow-200">Password</li>
       </ul>
     </div>
   );

@@ -1,11 +1,11 @@
 export default function App() {
   return (
     <div>
-      <h1>App Settings</h1>
+      <h2>App Settings</h2>
       <ul className="m-3">
-        <li>Theme</li>
-        <li>Language</li>
-        <li>Notifications</li>
+        <li className="text-yellow-200">Theme</li>
+        <li className="text-yellow-200">Language</li>
+        <li className="text-yellow-200">Notifications</li>
       </ul>
     </div>
   );

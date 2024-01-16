@@ -11,7 +11,11 @@ import {
 
 // add main tailwind css file
 import styles from "./tailwind.css";
+
+// add icons
 import { HomeIcon, DiscoverIcon, RecipeBookIcon, SettingsIcon } from "./components/Icons";
+
+// add classnames module
 import classNames from "classnames";
 
 // meta description for all pages

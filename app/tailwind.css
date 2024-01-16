@@ -2,7 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #2a6592;
+  --secondary-color: #8ec3eb;
+}
+
 body {
   background-color: #333;
   color: #fff;
+}
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 16px; }
+h4 { font-size: 14px; }
+
+.page-nav .active {
+  color: rgb(254 240 138);
+  background-color: var(--primary-color);
+}
+.page-nav a.active:hover, .page-nav a:hover {
+  opacity: 0.7;
 }

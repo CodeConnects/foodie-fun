@@ -44,6 +44,7 @@ export default function App() {
             <AppNavLink to="discover"><DiscoverIcon /></AppNavLink>
             <AppNavLink to="app"><RecipeBookIcon /></AppNavLink>
             <AppNavLink to="settings"><SettingsIcon /></AppNavLink>
+            <AppNavLink to="apiFetcher">api fetcher</AppNavLink>
           </ul>
         </nav>
         <div className="p-4"><Outlet /></div>

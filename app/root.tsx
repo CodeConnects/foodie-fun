@@ -15,7 +15,7 @@ import {
 import styles from "./tailwind.css";
 
 // add icons
-import { HomeIcon, DiscoverIcon, RecipeBookIcon, SettingsIcon } from "./components/Icons";
+import { HomeIcon, DiscoverIcon, RecipeBookIcon, SettingsIcon, ChatBubble } from "./components/Icons";
 
 // add classnames module
 import classNames from "classnames";
@@ -46,7 +46,7 @@ export default function App() {
             <AppNavLink to="discover"><DiscoverIcon /></AppNavLink>
             <AppNavLink to="app"><RecipeBookIcon /></AppNavLink>
             <AppNavLink to="settings"><SettingsIcon /></AppNavLink>
-            <AppNavLink to="apiFetcher">api fetcher</AppNavLink>
+            <AppNavLink to="apiFetcher"><ChatBubble /></AppNavLink>
           </ul>
         </nav>
         <div className="p-4"><Outlet /></div>
@@ -75,7 +75,7 @@ function AppNavLink({ children, to }: AppNavLinkProps) {
         {({ isActive }) => (
           <div 
             className={classNames(
-              "py-4 flex justify-center bg-opacity-50 hover:bg-secondary hover:bg-opacity-80 transition-colors duration-200",
+              "py-5 flex justify-center bg-opacity-50 hover:bg-secondary hover:bg-opacity-80 transition-colors duration-200",
               isActive ? "bg-secondary" : "",
               isLoading ? "animate-spin" : ""
             )}

@@ -20,11 +20,12 @@ export default function ApiFetcher() {
   const data: any = useLoaderData();
   return (
     <div>
-      <h1>WeatherAPI</h1>
-      <h2>&nbsp;</h2>
-      <img style={{float: 'left'}} src={`${data.current.condition.icon}`} />
-      <h2 style={{paddingLeft: '70px', paddingTop: '6px', width: '125%', lineHeight: '32px'}}>On {data.location.localtime} it is <span style={{color: 'yellow'}}>{data.current.temp_f}° F and {data.current.condition.text}</span></h2>
-      <h2 style={{paddingLeft: '70px', width: '125%', lineHeight: '32px'}}>In <span style={{color: 'yellow'}}>{data.location.name} {data.location.region}</span>, lat {data.location.lat} long {data.location.lon}</h2>
+      <div className="weather-head" style={{position: 'relative'}}>
+        <h1 style={{marginBottom: '32px'}}>WeatherAPI</h1>
+        <p><img src={`${data.current.condition.icon}`} /></p>
+        <h2 style={{lineHeight: '32px'}}>On {data.location.localtime} it is <span style={{color: 'yellow'}}>{data.current.temp_f}° F and {data.current.condition.text}</span></h2>
+        <h2 style={{lineHeight: '32px'}}>In <span style={{color: 'yellow'}}>{data.location.name} {data.location.region}</span>, lat {data.location.lat} long {data.location.lon}</h2>
+      </div>
 
       <ul>
         {data.forecast.forecastday.map((day: any) => (

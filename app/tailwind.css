@@ -26,6 +26,7 @@ h4 { font-size: 14px; }
 
 .animate-spin {
   animation: spin 1000ms linear infinite;
+  border-radius: 48%;
 }
 
 @keyframes spin {

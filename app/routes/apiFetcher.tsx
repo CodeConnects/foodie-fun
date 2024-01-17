@@ -20,11 +20,12 @@ export default function ApiFetcher() {
   const data: any = useLoaderData();
   return (
     <div>
-      <div className="weather-head" style={{position: 'relative'}}>
+      <div className="weather-head" style={{textAlign: 'center', width: 'fit-content', margin: '0 auto', position: 'relative'}}>
         <h1 style={{marginBottom: '32px'}}>WeatherAPI</h1>
-        <p><img src={`${data.current.condition.icon}`} /></p>
-        <h2 style={{lineHeight: '32px'}}>On {data.location.localtime} it is <span style={{color: 'yellow'}}>{data.current.temp_f}° F and {data.current.condition.text}</span></h2>
-        <h2 style={{lineHeight: '32px'}}>In <span style={{color: 'yellow'}}>{data.location.name} {data.location.region}</span>, lat {data.location.lat} long {data.location.lon}</h2>
+        <p><img style={{margin: '0 auto'}} src={`${data.current.condition.icon}`} /></p>
+        <h2 style={{paddingTop: '6px', lineHeight: '32px'}}>{data.location.localtime}</h2>
+        <h2 style={{lineHeight: '40px'}}><span style={{color: 'yellow'}}>{data.current.temp_f}° F and {data.current.condition.text} in {data.location.name}, {data.location.region}</span></h2>
+        <h2 style={{lineHeight: '32px'}}>lat {data.location.lat} long {data.location.lon}</h2>
       </div>
 
       <ul>

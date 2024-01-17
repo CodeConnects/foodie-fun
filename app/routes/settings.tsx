@@ -7,13 +7,13 @@ export default function Settings() {
 
       <nav className="page-nav my-5">
         <NavLink
+          className="bg-secondary text-yellow-950 hover:bg-primary hover:text-yellow-200 p-2"
           to="app"
-          className="bg-secondary text-yellow-950 hover:bg-primary hover:text-yellow-200 p-2" 
         >App</NavLink>
 
         <NavLink 
+          className="bg-secondary text-yellow-950 hover:bg-primary hover:text-yellow-200 p-2 m-2"
           to="profile"
-          className="bg-secondary text-yellow-950 hover:bg-primary hover:text-yellow-200 p-2 m-2" 
         >Profile</NavLink>
       </nav>
 

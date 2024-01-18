@@ -49,7 +49,7 @@ export default function App() {
             <AppNavLink to="apiFetcher"><ChatBubble /></AppNavLink>
           </ul>
         </nav>
-        <div className="p-4"><Outlet /></div>
+        <div className="p-4 mx-auto"><Outlet /></div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

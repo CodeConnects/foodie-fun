@@ -20,19 +20,19 @@ export default function ApiFetcher() {
   const data: any = useLoaderData();
   return (
     <div>
-      <div className="weather-head" style={{textAlign: 'center', width: 'fit-content', margin: '0 auto', position: 'relative'}}>
-        <h1 style={{marginBottom: '32px'}}>WeatherAPI</h1>
-        <p><img style={{margin: '0 auto'}} src={`${data.current.condition.icon}`} /></p>
-        <h2 style={{paddingTop: '6px', lineHeight: '32px'}}>{data.location.localtime}</h2>
-        <h2 style={{lineHeight: '40px'}}><span style={{color: 'yellow'}}>{data.current.temp_f}° F and {data.current.condition.text} in {data.location.name}, {data.location.region}</span></h2>
-        <h2 style={{lineHeight: '32px'}}>lat {data.location.lat} long {data.location.lon}</h2>
+      <div className="weather-head text-center my-0 mx-auto">
+        <h1 className="mb-4">WeatherAPI</h1>
+        <p><img className="my-0 mx-auto" src={`${data.current.condition.icon}`} /></p>
+        <h2 className="h-10">{data.location.localtime}</h2>
+        <h2 className="h-10"><span className="text-yellow-300">{data.current.temp_f}° F and {data.current.condition.text} in {data.location.name}, {data.location.region}</span></h2>
+        <h2 className="h-10">lat {data.location.lat} long {data.location.lon}</h2>
       </div>
 
-      <ul>
+      <ul className="flex flex-wrap justify-center">
         {data.forecast.forecastday.map((day: any) => (
-          <li key={day.date} style={{textAlign: 'center', float: 'left', margin: '50px 50px 10px 0px'}}>
+          <li key={day.date} className="text-center mt-12 mx-10 mb-2">
             <p>{day.day.condition.text}</p>
-            <img style={{marginLeft: 'auto', marginRight: 'auto'}} src={`${day.day.condition.icon}`} />
+            <img className="mx-auto" src={`${day.day.condition.icon}`} />
             <p>High: {day.day.maxtemp_f}° F</p>
             <p>Low: {day.day.mintemp_f}° F</p>
             <p>{day.date}</p>

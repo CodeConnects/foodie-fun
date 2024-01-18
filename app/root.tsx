@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import {
   Links,
@@ -10,6 +11,7 @@ import {
   useNavigation,
   useResolvedPath,
 } from "@remix-run/react";
+import { useMatches } from "react-router-dom";
 
 // add main tailwind css file
 import styles from "./tailwind.css";
@@ -31,6 +33,11 @@ export const meta: MetaFunction = () => {
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
 
 export default function App() {
+  const matches = useMatches();
+  useEffect(() => {
+    console.log(matches);
+
+  }, [matches]);
   return (
     <html lang="en">
       <head>
